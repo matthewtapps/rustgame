@@ -18,6 +18,7 @@ pub fn spawn_player(mut commands: Commands, mb: Res<MapBuilder>, atlas: Res<Char
         },
         TileSize::square(1.0),
         Player,
+        MovementStats::default(),
     ));
 }
 

@@ -27,3 +27,22 @@ impl TileSize {
         }
     }
 }
+
+#[derive(Component)]
+pub struct MovementStats {
+    pub max_move_distance: i32,
+}
+
+impl Default for MovementStats {
+    fn default() -> Self {
+        Self {
+            max_move_distance: 6,
+        }
+    }
+}
+
+#[derive(Component)]
+pub struct PendingMovement {
+    pub start_position: Position,
+    pub tiles_moved: i32,
+}

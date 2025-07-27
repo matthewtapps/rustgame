@@ -63,6 +63,9 @@ fn main() {
                 }),
         )
         .insert_resource(ClearColor(Color::srgb(0.1, 0.1, 0.1)))
+        .insert_resource(GameTick::default())
+        .insert_resource(PlayerTurn::default())
+        .insert_resource(MovementState::default())
         .add_systems(Startup, setup)
         .add_plugins(MapPlugin)
         .add_plugins(SpawnerPlugin)
