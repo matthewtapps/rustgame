@@ -4,6 +4,6 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-rand = "0.9.1"
-rltk = { version = "0.8.0" }
-serde = { version = "1.0.219", features = [ "derive" ]}
+bevy = { version = "0.16.1", features = ["dynamic_linking"] }
+rand = "0.9.2"
+serde = "1.0.219"
