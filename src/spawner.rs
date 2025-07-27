@@ -9,7 +9,11 @@ pub fn spawn_player(mut commands: Commands, mb: Res<MapBuilder>, atlas: Res<Char
                 index: 64,
             },
         ),
-        Transform::from_xyz(mb.player_start.x as f32, mb.player_start.y as f32, 1.0),
+        Position {
+            x: mb.player_start.x,
+            y: mb.player_start.y,
+            z: 0,
+        },
         TileSize::square(1.0),
         Player,
     ));
