@@ -6,7 +6,7 @@ pub struct Player;
 #[derive(Component)]
 pub struct MainCamera;
 
-#[derive(Default, Copy, Clone, Eq, PartialEq, Hash, Component)]
+#[derive(Default, Copy, Clone, Eq, PartialEq, Hash, Component, Debug)]
 pub struct Position {
     pub x: i32,
     pub y: i32,

@@ -7,11 +7,10 @@ pub fn camera_move(
     mut camera_query: Query<&mut Transform, (With<MainCamera>, Without<Player>)>,
 ) {
     // if player position got updated
-    if let Ok(player_position) = player_query.single() {
-        if let Ok(mut camera_transform) = camera_query.single_mut() {
-            // get camera transform and window
-            //let mut camera_transform = camera_query.single_mut().unwrap();
-            if let Ok(window) = primary_query.single() {
+    for player_position in player_query.iter() {
+        // get camera transform and window
+        if let Ok(window) = primary_query.single() {
+            if let Ok(mut camera_transform) = camera_query.single_mut() {
                 // calculate new coordinates and update
                 let cam_x = convert_pos(
                     player_position.x as f32,

@@ -49,26 +49,30 @@ pub fn spawn_map_tiles(mut commands: Commands, mb: Res<MapBuilder>, atlas: Res<C
             match mb.map.tiles[idx] {
                 TileType::Floor => {
                     commands.spawn((
-                        Sprite::from_atlas_image(
-                            atlas.texture.clone(),
-                            TextureAtlas {
+                        Sprite {
+                            image: atlas.texture.clone(),
+                            texture_atlas: Some(TextureAtlas {
                                 layout: atlas.atlas.clone(),
                                 index: 46,
-                            },
-                        ),
+                            }),
+                            custom_size: Some(Vec2::new(1.0, 1.0)),
+                            ..Default::default()
+                        },
                         Position { x, y, z: 0 },
                         TileSize::square(1.0),
                     ));
                 }
                 TileType::Wall => {
                     commands.spawn((
-                        Sprite::from_atlas_image(
-                            atlas.texture.clone(),
-                            TextureAtlas {
+                        Sprite {
+                            image: atlas.texture.clone(),
+                            texture_atlas: Some(TextureAtlas {
                                 layout: atlas.atlas.clone(),
                                 index: 35,
-                            },
-                        ),
+                            }),
+                            custom_size: Some(Vec2::new(1.0, 1.0)),
+                            ..Default::default()
+                        },
                         Position { x, y, z: 0 },
                         TileSize::square(1.0),
                     ));

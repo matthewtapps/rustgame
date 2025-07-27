@@ -40,11 +40,11 @@ fn setup(
     // Add a 2D Camera
     commands.spawn((
         MainCamera,
-        Camera2d::default(),
-        Projection::custom(OrthographicProjection {
-            scale: 0.5,
-            ..OrthographicProjection::default_2d()
-        }),
+        Camera2d,
+        Transform {
+            scale: Vec3::new(0.5, 0.5, 1.0),
+            ..Default::default()
+        },
     ));
 }
 
